@@ -21,6 +21,9 @@ importers:
         specifier: ^12.2.0
         version: 12.2.0(@azure/core-client@1.10.1)
     devDependencies:
+      '@types/mssql':
+        specifier: ^9.1.9
+        version: 9.1.9(@azure/core-client@1.10.1)
       '@types/node':
         specifier: ^25.2.1
         version: 25.2.1
@@ -475,6 +478,9 @@ packages:
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
+
+  '@types/mssql@9.1.9':
+    resolution: {integrity: sha512-P0nCgw6vzY23UxZMnbI4N7fnLGANt4LI4yvxze1paPj+LuN28cFv5EI+QidP8udnId/BKhkcRhm/BleNsjK65A==}
 
   '@types/node@25.2.1':
     resolution: {integrity: sha512-CPrnr8voK8vC6eEtyRzvMpgp3VyVRhgclonE7qYi6P9sXwYb59ucfrnmFBTaP0yUi8Gk4yZg/LlTJULGxvTNsg==}
@@ -1659,6 +1665,15 @@ snapshots:
   '@types/deep-eql@4.0.2': {}
 
   '@types/estree@1.0.8': {}
+
+  '@types/mssql@9.1.9(@azure/core-client@1.10.1)':
+    dependencies:
+      '@types/node': 25.2.1
+      tarn: 3.0.2
+      tedious: 19.2.0(@azure/core-client@1.10.1)
+    transitivePeerDependencies:
+      - '@azure/core-client'
+      - supports-color
 
   '@types/node@25.2.1':
     dependencies:

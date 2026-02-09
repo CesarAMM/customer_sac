@@ -1,4 +1,4 @@
-import {TicketStatus} from '../domain/ticket-status.enum';
+import {TicketStatus} from '../domain/ticket-status';
 import {DomainError} from '../domain/domain-error'
 import {TicketErrorCode} from '../domain/ticket-error.code'
 

@@ -1,6 +1,7 @@
 import Fastify from 'fastify'
 import jwt from '@fastify/jwt'
 import dotenv from 'dotenv'
+import { closedSQLServer, cnnSQLServer } from './database/sqlserver';
 
 dotenv.config();
 
@@ -11,6 +12,16 @@ export function buildApp() {
     app.get('/health', async () => {
         return {status: 'Ok'};
     });
+
+    app.addHook('onReady', async () => {
+        await cnnSQLServer();
+        app.log.info('SQL SERVER CONNECTED')
+    })
+
+    app.addHook('onClose', async () => {
+        await closedSQLServer();
+        app.log.info('SQL SERVER DISCONECT')
+    })
     
     return app;
 }
